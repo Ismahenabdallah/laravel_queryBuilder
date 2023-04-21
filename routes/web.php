@@ -40,7 +40,8 @@ Route::controller(PostController::class)->group(function () {
         Route::get('/posts/{id}', 'showId');
 
 });
-
+//delete All lazmou 9bal -->Route::resource('routequerybuilder', QueryBuilderConroller::class);
+Route::delete('routequerybuilder/deleteall', [QueryBuilderConroller::class, 'deleteAll'])->name('routequerybuilder.deleteAll');
 Route::resource('routequerybuilder', QueryBuilderConroller::class);
 Route::resource('resssource', RessourceController::class);
 //Route::resource('resssource', RessourceController::class)->only(['create']);//  5adem kan el create --> user/create

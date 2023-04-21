@@ -3,7 +3,11 @@
 @section('content')
 <h1>All Posts</h1>
 
-
+<form action="{{ route('routequerybuilder.deleteAll') }}" method="POST">
+    @csrf
+    @method('delete')
+    <button class="btn btn-outline-danger" type="submit">Delete All</button>
+    </form>
 
 <table class="table">
     <thead>
@@ -17,14 +21,15 @@
     </thead>
     <tbody>
         @forelse ( $queryBuilder as $q )
-      <tr>
+      <tr >
 
         <th scope="row">{{ $q->id }}</th>
         <td>{{  $q->title }}</td>
         <td>{{  $q->body }}</td>
-        <td>
-            <a class="btn btn-outline-success"  href="{{ route('routequerybuilder.edit', $q->id) }}">Edit</a>
-           <form action="{{ route('routequerybuilder.destroy' , $q->id) }}" method="POST">
+        <td style="display:flex">
+            <a class="btn btn-outline-success" style="height:50%; width: 80px"  href="{{ route('routequerybuilder.edit', $q->id) }}">Edit</a>
+
+            <form action="{{ route('routequerybuilder.destroy' , $q->id) }}" method="POST">
         @csrf
         @method('delete')
         <button class="btn btn-outline-danger" type="submit">Delete</button>

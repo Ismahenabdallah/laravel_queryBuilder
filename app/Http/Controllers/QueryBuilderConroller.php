@@ -88,4 +88,10 @@ class QueryBuilderConroller extends Controller
         DB::table('querybuilder')->where('id', $id)->delete();
         return redirect()->route('routequerybuilder.index');
     }
+    public function deleteAll()
+    {
+        DB::table('querybuilder')->delete();
+        return redirect()->route('routequerybuilder.index');
+    }
+
 }

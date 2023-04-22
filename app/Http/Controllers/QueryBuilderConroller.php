@@ -94,4 +94,9 @@ class QueryBuilderConroller extends Controller
         return redirect()->route('routequerybuilder.index');
     }
 
+
+    public function deleteTruncate (){
+        DB::table('querybuilder')->truncate();
+        return redirect()->route('routequerybuilder.index');
+    }
 }

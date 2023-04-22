@@ -8,7 +8,11 @@
     @method('delete')
     <button class="btn btn-outline-danger" type="submit">Delete All</button>
     </form>
-
+    <form action="{{ route('routequerybuilder.deleteTruncate') }}" method="POST">
+        @csrf
+        @method('delete')
+        <button class="btn btn-outline-danger" type="submit">Delete By Truncate</button>
+        </form>
 <table class="table">
     <thead>
       <tr>

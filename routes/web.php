@@ -42,6 +42,7 @@ Route::controller(PostController::class)->group(function () {
 });
 //delete All lazmou 9bal -->Route::resource('routequerybuilder', QueryBuilderConroller::class);
 Route::delete('routequerybuilder/deleteall', [QueryBuilderConroller::class, 'deleteAll'])->name('routequerybuilder.deleteAll');
+Route::delete('routequerybuilder/truncate', [QueryBuilderConroller::class, 'deleteTruncate'])->name('routequerybuilder.deleteTruncate');
 Route::resource('routequerybuilder', QueryBuilderConroller::class);
 Route::resource('resssource', RessourceController::class);
 //Route::resource('resssource', RessourceController::class)->only(['create']);//  5adem kan el create --> user/create
